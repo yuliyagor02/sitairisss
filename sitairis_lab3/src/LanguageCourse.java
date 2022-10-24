@@ -1,11 +1,13 @@
-public class LanguageCourse {
+public class LanguageCourse implements Paid{
     private int courseIndex;
     private String courseName;
     private String lessonFormat;
+    private int pay;
     public LanguageCourse(){
         courseIndex=0;
         courseName="-";
         lessonFormat="-";
+        pay=7;
     }
     public void setCourseIndex(int courseIndex){
         this.courseIndex=courseIndex;
@@ -28,5 +30,14 @@ public class LanguageCourse {
 
     public String getLessonFormat() {
         return lessonFormat;
+    }
+
+    public int getPay() {
+        return pay;
+    }
+    @Override
+    public int countPay(int courseIndex){
+        this.pay=pay*courseIndex;
+        return pay;
     }
 }
